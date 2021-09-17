@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 :root {
-  /* - Pale Violet (sub-heading at the top of the app UI): hsl(276, 100%, 81%)
+  /*
 - Moderate Violet (chat on the left): hsl(276, 55%, 52%)
 - Desaturated Dark Violet (chat on the right): hsl(271, 15%, 43%)
 - Grayish Blue (placeholder text): hsl(206, 6%, 79%) */
@@ -11,12 +11,10 @@
   --clr-grad-magenta: hsl(293, 100%, 63%);
   --clr-grad-violet: hsl(264, 100%, 61%);
 
-  /* ### Secondary
-
-- White: hsl(0, 0%, 100%)
-- Light Grayish Violet (app background): hsl(270, 20%, 96%)
-- Very Dark Desaturated Violet (submit button background): hsl(271, 36%, 24%)
-- Very Light Magenta (radio button outline): hsl(289, 100%, 72%) */
+  --clr-app-background: hsl(270, 20%, 96%);
+  --clr-submit-button-background: hsl(271, 36%, 24%);
+  --clr-radio-button-outline: hsl(289, 100%, 72%);
+  --clr-user-status: hsl(276, 100%, 81%);
 }
 
 *,
@@ -33,27 +31,95 @@ body {
 }
 
 .bg-gradient-to-bl {
-  background-image: linear-gradient(
-    to bottom,
-    var(--clr-grad-magenta),
-    var(--clr-grad-violet)
-  );
+  background-image: linear-gradient(to bottom, var(--clr-grad-magenta), var(--clr-grad-violet));
 }
 
 .bg-gradient-to-l {
-  background-image: linear-gradient(
-    to left,
-    var(--clr-grad-magenta),
-    var(--clr-grad-violet)
-  );
+  background-image: linear-gradient(to left, var(--clr-grad-magenta), var(--clr-grad-violet));
 }
 
 .bg-gradient-to-r {
-  background-image: linear-gradient(
-    to right,
-    var(--clr-grad-magenta),
-    var(--clr-grad-violet)
-  );
+  background-image: linear-gradient(to right, var(--clr-grad-magenta), var(--clr-grad-violet));
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.text-xs {
+  font-size: 8px;
+}
+
+.text-sm {
+  font-size: 12px;
+}
+
+.text-name {
+  color: white;
+}
+
+.text-status {
+  color: var(--clr-user-status);
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .container {
@@ -62,6 +128,55 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
+}
+
+.small-cube {
+  width: 2px;
+  height: 2px;
+  background-color: var(--clr-user-status);
+}
+
+.back-icon .top-part {
+  width: 3px;
+  height: 10px;
+  transform: skew(-25deg);
+  background: white;
+}
+
+.back-icon .bottom-part {
+  width: 3px;
+  height: 10px;
+  transform: skew(25deg);
+  background: white;
+}
+
+.chevron-left {
+  position: relative;
+  text-align: center;
+  height: 14px;
+  width: 10px;
+}
+
+.chevron-left:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 51%;
+  width: 3px;
+  background: white;
+  transform: skew(-20deg);
+}
+
+.chevron-left:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 51%;
+  width: 3px;
+  background: white;
+  transform: skew(20deg);
 }
 
 .first-bg {
@@ -95,12 +210,52 @@ body {
 /* PHONE */
 .phone-section {
   box-shadow: 0 0 50px #ccc;
-  width: 240px;
+  width: 260px;
   height: 500px;
   border-radius: 40px;
   margin-right: min(10vw, 100px);
   justify-self: end;
   background-color: white;
+  padding: 0.5rem;
+}
+
+.app {
+  border-radius: 30px;
+  background-color: var(--clr-app-background);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-bar {
+  height: 100px;
+  border-radius: 5px;
+}
+
+.app-bar-content {
+  margin: 2rem 0.75rem 1rem;
+}
+
+.more-menu > *:nth-child(2) {
+  margin: 1px 0;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.chat-box {
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.chat-input {
+  height: 100px;
+  background-color: blue;
+  padding: 0.55rem;
 }
 
 /* TEXT */
