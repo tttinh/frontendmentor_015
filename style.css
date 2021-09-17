@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 :root {
-  /*
-- Moderate Violet (chat on the left): hsl(276, 55%, 52%)
-- Desaturated Dark Violet (chat on the right): hsl(271, 15%, 43%)
-- Grayish Blue (placeholder text): hsl(206, 6%, 79%) */
   --clr-heading: hsl(271, 36%, 24%);
   --clr-paragraph: hsl(270, 7%, 64%);
 
@@ -15,6 +11,10 @@
   --clr-submit-button-background: hsl(271, 36%, 24%);
   --clr-radio-button-outline: hsl(289, 100%, 72%);
   --clr-user-status: hsl(276, 100%, 81%);
+  --clr-left-chat: hsl(276, 55%, 52%);
+  --clr-left-bg: hsl(270, 20%, 92%);
+  --clr-right-chat: hsl(271, 15%, 43%);
+  --clr-place-holder: hsl(206, 6%, 79%);
 }
 
 *,
@@ -250,6 +250,26 @@ body {
 .chat-box {
   height: 100%;
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.left-chat {
+  font-size: 8px;
+  color: var(--clr-left-chat);
+  background-color: var(--clr-left-bg);
+  padding: 1em;
+  max-width: 55%;
+}
+
+.right-chat {
+  align-self: end;
+  font-size: 8px;
+  color: var(--clr-right-chat);
+  background-color: white;
+  padding: 1em;
+  max-width: 55%;
 }
 
 .chat-input {
