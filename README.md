@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/chat-app-css-v2lii9CW-)
 - [Live Site URL](https://tttinh.github.io/frontendmentor_015/)
 
 ## My process
